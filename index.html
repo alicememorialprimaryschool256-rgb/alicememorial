@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Alice Memorial Foundation builds a community hub in Buikwe District, Uganda: schools, a health centre, a teaching farm and a sports academy.">
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Alice Memorial Foundation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: black masthead carrying the AMF logo and headline, then the campus master plan image,
+   a status ledger of the hub's parts, the Agro-farms section, and ways to help. */
+:root {
+  --bg: #f4f6fa;        /* blue-tinted paper */
+  --surface: #e5eaf3;
+  --ink: #0e1a33;       /* navy-black */
+  --muted: #53607a;
+  --line: #ccd4e3;
+  --blue: #1c3f94;      /* AMF logo blue, main accent */
+  --on-blue: #f4f6fa;
+  --sun: #e2a912;       /* Ugandan flag yellow, tiny highlights */
+  --green: #2f6b4a;     /* cocoa */
+  --coffee: #8a5a2b;
+  --hero-bg: #000;      /* matches the logo's own black ground */
+  --hero-fg: #f2f5fb;
+  --hero-muted: #aeb8cc;
+  --hero-accent: #6aa8ee;
+  --ok-bg: #d3e8d9; --ok-fg: #14472f;
+  --build-bg: #f6e6b4; --build-fg: #5c4300;
+  --plan-bg: #dbe3f4; --plan-fg: #22377a;
+  --font-display: "Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --font-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a0f1c; --surface: #121a2e; --ink: #e7ecf7; --muted: #98a4bf; --line: #25304a;
+    --blue: #7aaaf2; --on-blue: #08122a; --sun: #f0bd2f; --green: #62b98a; --coffee: #c9955a;
+    --ok-bg: #1d3a2b; --ok-fg: #a7e0bf; --build-bg: #3d3210; --build-fg: #f0d78a; --plan-bg: #202a45; --plan-fg: #b8c8f0;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0a0f1c; --surface: #121a2e; --ink: #e7ecf7; --muted: #98a4bf; --line: #25304a;
+  --blue: #7aaaf2; --on-blue: #08122a; --sun: #f0bd2f; --green: #62b98a; --coffee: #c9955a;
+  --ok-bg: #1d3a2b; --ok-fg: #a7e0bf; --build-bg: #3d3210; --build-fg: #f0d78a; --plan-bg: #202a45; --plan-fg: #b8c8f0;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.6; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; }
+.wrap { max-width: 1040px; margin-inline: auto; padding-inline: 20px; }
+.mono { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.04; margin: 0; }
+
+/* masthead */
+.mast { background: var(--hero-bg); color: var(--hero-fg); }
+.mast .wrap { padding-block: 18px 64px; }
+.bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 28px; }
+.bar img { display: block; width: clamp(190px, 34vw, 280px); height: auto; margin-left: -14px; }
+nav { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 15px; font-weight: 500; }
+nav a { text-decoration: none; color: var(--hero-muted); padding-block: 4px; }
+nav a:hover { color: var(--hero-fg); text-decoration: underline; text-underline-offset: 4px; }
+.mast .mono { color: var(--hero-muted); margin-top: 28px; }
+.mast h1 { font-weight: 800; font-size: clamp(38px, 7.4vw, 80px); letter-spacing: -0.02em; margin-block: 16px 22px; max-width: 15ch; }
+.mast h1 em { font-style: normal; color: var(--hero-accent); }
+.lead { font-size: clamp(18px, 2.3vw, 21px); max-width: 54ch; margin: 0 0 28px; color: var(--hero-fg); }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-block; font-weight: 600; font-size: 16px; text-decoration: none; padding: 13px 22px; border-radius: 4px; background: var(--hero-accent); color: #04101f; border: 2px solid var(--hero-accent); }
+.btn.ghost { background: transparent; color: var(--hero-fg); border-color: #56627a; }
+.btn:hover { filter: brightness(1.1); }
+
+section { padding-block: 56px; border-top: 1px solid var(--line); }
+section:first-of-type { border-top: 0; }
+h2 { font-weight: 700; font-size: clamp(30px, 5vw, 48px); letter-spacing: -0.015em; margin-block: 10px 18px; max-width: 18ch; }
+.intro { max-width: 60ch; color: var(--muted); margin: 0 0 32px; }
+
+/* master plan */
+.plan-btn { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; position: relative; border-radius: 6px; overflow: hidden; }
+.plan-btn img { display: block; width: 100%; height: auto; }
+.plan-btn span { position: absolute; right: 12px; bottom: 12px; background: #000c; color: #fff; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 8px 12px; border-radius: 3px; }
+.inside { margin: 24px 0 0; }
+.inside img { display: block; width: 100%; height: auto; border-radius: 6px; }
+.caption { font-size: 14px; color: var(--muted); margin: 12px 0 0; max-width: 70ch; }
+.impact { display: grid; gap: 0 40px; grid-template-columns: minmax(0, 1fr); margin-top: 36px; }
+@media (min-width: 760px) { .impact { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+.impact h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+.impact ul { margin: 0 0 24px; padding-left: 20px; }
+.impact li { padding-block: 3px; }
+.impact li::marker { color: var(--blue); }
+
+/* college */
+.college { display: grid; gap: 28px 44px; grid-template-columns: minmax(0, 1fr); align-items: center; }
+@media (min-width: 760px) { .college { grid-template-columns: 300px minmax(0, 1fr); } }
+.crest { margin: 0; background: #000; border-radius: 6px; overflow: hidden; max-width: 340px; }
+.crest img { display: block; width: 100%; height: auto; }
+.college-text p { margin: 0 0 16px; max-width: 58ch; }
+.college-text .motto { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.feat { display: grid; grid-template-columns: minmax(0, 1fr); margin-top: 36px; border-top: 2px solid var(--ink); }
+@media (min-width: 760px) { .feat { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 36px; } }
+.feat div { padding-block: 20px; border-bottom: 1px solid var(--line); }
+.feat h3 { font-size: 21px; font-weight: 700; margin-bottom: 6px; }
+.feat p { margin: 0; color: var(--muted); font-size: 16px; }
+.banner { margin: 28px 0 0; }
+.banner img { display: block; width: 100%; height: auto; border-radius: 6px; }
+
+/* sports */
+.sports-lead { margin: 0 0 28px; }
+.sports-lead img { display: block; width: 100%; height: auto; border-radius: 6px; }
+.sports-text p { margin: 0; max-width: 62ch; }
+.ladder { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.step { background: var(--surface); border-top: 4px solid var(--blue); padding: 14px 14px 16px; display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; }
+.step.top { border-top-color: var(--sun); }
+.step b { font-family: var(--font-display); font-weight: 700; font-size: 20px; line-height: 1.15; }
+@media (min-width: 760px) {
+  .ladder { grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: end; }
+  .step { min-height: calc(92px + var(--i) * 30px); }
+}
+.gallery { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px 14px; margin-top: 36px; }
+@media (min-width: 640px) {
+  .gallery { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .gallery figure { grid-column: span 2; }
+  .gallery figure.wide { grid-column: span 3; }
+}
+.gallery figure { margin: 0; }
+.gallery img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; }
+.gallery .wide img { aspect-ratio: 16 / 9; object-position: 50% 25%; }
+.gallery figure.full { grid-column: 1 / -1; }
+.gallery .full img { aspect-ratio: 1100 / 495; object-position: 50% 50%; }
+.gallery figcaption { font-size: 13.5px; color: var(--muted); margin-top: 6px; }
+.next-title { font-size: 26px; font-weight: 700; margin-top: 44px; }
+.feat.next { margin-top: 14px; }
+
+/* crops */
+.crops { list-style: none; margin: 14px 0 0; padding: 0; border-top: 2px solid var(--ink); display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 40px; }
+@media (min-width: 700px) { .crops { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.crops li { display: flex; flex-direction: column; gap: 2px; padding-block: 14px; border-bottom: 1px solid var(--line); }
+.crops strong { font-family: var(--font-display); font-weight: 700; font-size: 21px; line-height: 1.15; }
+.crops p { margin: 0; color: var(--muted); font-size: 16px; }
+
+/* ledger */
+.ledger { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
+.ledger li { display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px 24px; padding-block: 18px; border-bottom: 1px solid var(--line); }
+@media (min-width: 760px) { .ledger li { grid-template-columns: 250px 130px minmax(0, 1fr); align-items: baseline; } }
+.ledger h3 { font-weight: 700; font-size: 21px; letter-spacing: -0.005em; }
+.ledger p { margin: 0; color: var(--muted); font-size: 16px; }
+.chip { display: inline-block; justify-self: start; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 9px; border-radius: 3px; font-weight: 500; }
+.chip.ok { background: var(--ok-bg); color: var(--ok-fg); }
+.chip.build { background: var(--build-bg); color: var(--build-fg); }
+.chip.plan { background: var(--plan-bg); color: var(--plan-fg); }
+
+/* farm */
+.farm { display: grid; gap: 40px; grid-template-columns: minmax(0, 1fr); }
+.farm p { margin: 0 0 16px; max-width: 56ch; }
+.place { margin-top: 20px; padding: 14px 16px; background: var(--surface); border-left: 4px solid var(--sun); font-size: 15px; }
+.place b { font-family: var(--font-mono); font-weight: 500; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; display: block; color: var(--muted); margin-bottom: 2px; }
+
+/* help */
+.help { display: grid; grid-template-columns: minmax(0, 1fr); border-top: 2px solid var(--ink); }
+@media (min-width: 700px) { .help { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; } }
+.help div { padding-block: 22px; border-bottom: 1px solid var(--line); }
+.help h3 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+.help p { margin: 0; color: var(--muted); font-size: 16px; }
+.contact { background: var(--hero-bg); color: var(--hero-fg); padding: 36px 24px; border-radius: 6px; margin-top: 40px; border-bottom: 4px solid var(--hero-accent); }
+.contact h3 { font-size: clamp(26px, 4vw, 36px); margin-bottom: 10px; font-weight: 700; }
+.contact p { margin: 0 0 6px; max-width: 54ch; }
+.contact .mono { color: var(--hero-muted); margin-top: 14px; }
+
+.reach { margin-top: 22px; display: grid; gap: 4px; }
+.reach .mono { margin-top: 12px; }
+.nums { list-style: none; margin: 0; padding: 0; }
+.nums li { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; padding-block: 7px; border-bottom: 1px solid #2a3348; }
+.nums a { font-family: var(--font-display); font-weight: 600; font-size: clamp(19px, 3.6vw, 24px); text-decoration: none; min-width: 0; overflow-wrap: anywhere; }
+.nums a:hover { color: var(--hero-accent); }
+.copy { background: transparent; color: var(--hero-fg); border: 1px solid #56627a; border-radius: 3px; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 10px; cursor: pointer; }
+.copy:hover { border-color: var(--hero-accent); }
+footer { border-top: 1px solid var(--line); }
+footer .wrap { padding-block: 32px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+footer p { margin: 0; }
+
+/* full-size plan viewer */
+#zoom { position: fixed; inset: 0; z-index: 50; background: #000e; overflow: auto; }
+#zoom img { display: block; width: 1536px; max-width: none; height: auto; margin: 64px auto 24px; }
+#zoom button { position: fixed; top: calc(12px + env(safe-area-inset-top, 0px)); right: 16px; background: var(--hero-accent); color: #04101f; border: 0; font-weight: 600; font-size: 15px; padding: 10px 16px; border-radius: 4px; cursor: pointer; }
+</style>
+<body>
+<div class="mast" id="top">
+  <div class="wrap">
+    <div class="bar">
+      <img src="img/logo.png" width="840" height="470" alt="Alice Memorial Foundation logo">
+      <nav aria-label="Sections">
+        <a href="#plan">Master plan</a>
+        <a href="#college">College</a>
+        <a href="#sports">Sports</a>
+        <a href="#hub">Progress</a>
+        <a href="#programs">Programs</a>
+        <a href="#farm">Agro-farms</a>
+        <a href="#help">Partner with us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <p class="mono">Ssi Sub-county · Buikwe District · Uganda · 2026–2030</p>
+    <h1>Learning, health and farming, <em>in one place.</em></h1>
+    <p class="lead">Alice Memorial Foundation is building an education and skills campus in Buikwe District, with a secondary school, a vocational institute, a health centre, a teaching farm and a sports academy beside the primary school that is already running.</p>
+    <div class="cta">
+      <a class="btn" href="#plan">See the master plan</a>
+      <a class="btn ghost" href="#help">Partner with us</a>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section id="plan">
+    <div class="wrap">
+      <p class="mono">Master plan</p>
+      <h2>The Alice Memorial Education &amp; Skills Development Campus</h2>
+      <p class="intro">One site where a young person can finish secondary school, learn a trade, get treated at the health centre and learn modern farming. Tap the image to see it at full size.</p>
+      <button class="plan-btn" id="open-zoom" type="button" aria-label="View the master plan at full size">
+        <img src="img/campus-aerial.jpg" width="1536" height="560" alt="Concept render of the Alice Memorial campus from above: secondary school buildings around an assembly square, boys' and girls' hostels, a vocational institute with workshops, an HCIV health centre, an administration block, a library and an innovation centre, with green space all around.">
+        <span>View full size</span>
+      </button>
+      <p class="caption">Concept render of the planned campus. It shows the full vision; the list below says what is already running, what is being built and what is still planned.</p>
+      <figure class="inside">
+        <img src="img/campus-inside.jpg" width="1320" height="296" alt="Concept renders of interiors: a classroom, science laboratory, ICT lab, library, virtual learning hub, innovation hub, vocational workshops for tailoring, welding, electrical installation and carpentry, and HCIV ward, maternity ward and theatre." loading="lazy">
+        <figcaption class="caption">Concept renders of classrooms, labs, workshops and wards.</figcaption>
+      </figure>
+
+      <div class="impact">
+        <div>
+          <h3>What the campus will include</h3>
+          <ul>
+            <li>Secondary school for 1,000+ students, with boys' and girls' hostels</li>
+            <li>Library and ICT lab, innovation and entrepreneurship centre</li>
+            <li>Vocational institute: carpentry and joinery, welding and metal fabrication, electrical installation, tailoring and fashion design, hairdressing and cosmetology, ICT and digital skills</li>
+            <li>HCIV health centre with outpatient, maternity, general, children's and isolation wards, theatre and labour room, pharmacy, X-ray and dental unit</li>
+            <li>Sports complex, administration block, large green areas and solar energy</li>
+          </ul>
+        </div>
+        <div>
+          <h3>What it should change</h3>
+          <ul>
+            <li>Quality education for 1,000+ students</li>
+            <li>Skills training for 500+ trainees every year</li>
+            <li>Quality healthcare close to the community</li>
+            <li>Jobs and opportunity for young people</li>
+            <li>Food security and income from farming</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="college">
+    <div class="wrap">
+      <p class="mono">Alice Memorial College</p>
+      <h2>A secondary school for Buikwe</h2>
+      <div class="college">
+        <figure class="crest"><img src="img/crest.jpg" width="720" height="720" alt="Alice Memorial College crest: a shield with an open book, a torch, a microscope and a sunrise over green hills, with the motto Knowledge and Excellence."></figure>
+        <div class="college-text">
+          <p>Alice Memorial College will serve more than 1,000 students, both day scholars and boarders, from S.1 to S.6. Places will be subsidised for families from Buikwe District, so a good secondary school is within reach of the children who live around it.</p>
+          <p>The campus is designed to stay green, with large open lawns and tree-lined walkways kept between the buildings, and with solar energy to power it. We expect to start by 2028.</p>
+          <p>The college is foundation-aided. Government will be involved where possible, and we are open to any partnership.</p>
+          <p class="motto">Motto: Knowledge &amp; Excellence</p>
+        </div>
+      </div>
+      <div class="feat">
+        <div><h3>Day and boarding</h3><p>Separate boys' and girls' hostels sit on either side of the main school block.</p></div>
+        <div><h3>Subsidised for locals</h3><p>Reduced costs for students from Buikwe District.</p></div>
+        <div><h3>Green and solar</h3><p>Large green sections across the campus, and solar panels on the school roofs.</p></div>
+      </div>
+      <figure class="banner">
+        <img src="img/college-banner.jpg" width="1115" height="314" alt="Concept render of the secondary school block with the boys' hostel on the left and the girls' hostel on the right, surrounded by trees and lawns.">
+        <figcaption class="caption">Concept render: the secondary school block between the boys' and girls' hostels.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="sports">
+    <div class="wrap">
+      <p class="mono">Alice Sports Academy</p>
+      <h2>Where local talent gets trained</h2>
+      <figure class="sports-lead">
+        <img src="img/sports-team.jpg" width="936" height="432" alt="Alice Sports Academy footballers in red kits holding up a trophy in the school compound, with their coach beside them.">
+        <figcaption class="caption">Academy footballers with a trophy at the school.</figcaption>
+      </figure>
+      <div class="sports-text">
+        <p>Football for boys and netball for girls are running today. Each side has coaches who train the players regularly, to build talent and keep it. Our under-12 and under-14 teams have played at national level, where players received medals for taking part, and have won trophies closer to home.</p>
+      </div>
+
+      <ol class="ladder" aria-label="How far our teams have got">
+        <li class="step" style="--i:0"><span class="mono">District</span><b>Trophies</b></li>
+        <li class="step" style="--i:1"><span class="mono">Zonal</span><b>Trophies</b></li>
+        <li class="step" style="--i:2"><span class="mono">Regional</span><b>Trophies</b></li>
+        <li class="step top" style="--i:3"><span class="mono">National</span><b>Medals for taking part</b></li>
+      </ol>
+
+      <div class="gallery">
+        <figure><img src="img/sports-huddle.jpg" width="900" height="675" alt="Academy footballers in red kits gathered around their coach before a match." loading="lazy"><figcaption>Team talk before a match.</figcaption></figure>
+        <figure><img src="img/sports-trophy.jpg" width="750" height="562" alt="Young players in red kits gathered around a gold trophy at night." loading="lazy"><figcaption>Trophy night.</figcaption></figure>
+        <figure><img src="img/sports-girls-trophy.jpg" width="1016" height="756" alt="Girls in orange and blue striped kits lifting a gold trophy together after dark, with a man in a green and white shirt smiling beside them." loading="lazy"><figcaption>Receiving a trophy after dark.</figcaption></figure>
+        <figure><img src="img/sports-medals.jpg" width="750" height="562" alt="Three boys in lime green kits holding medals and exercise books." loading="lazy"><figcaption>Players with their medals.</figcaption></figure>
+        <figure><img src="img/sports-netball.jpg" width="720" height="540" alt="A netball match with a crowd of supporters and two white tents under tall trees." loading="lazy"><figcaption>Netball match.</figcaption></figure>
+        <figure><img src="img/sports-football.jpg" width="720" height="540" alt="A football match on a grass pitch with spectators beside the goal." loading="lazy"><figcaption>Football match.</figcaption></figure>
+        <figure class="full"><img src="img/sports-prayer.jpg" width="1100" height="495" alt="A row of players in teal kits kneeling with hands together in prayer on a red-earth pitch, with teammates and supporters standing behind them." loading="lazy"><figcaption>Players in prayer before a match.</figcaption></figure>
+      </div>
+
+      <h3 class="next-title">Coming next</h3>
+      <div class="feat next">
+        <div><h3>Volleyball and basketball</h3><p>Added when Alice Memorial College opens. The college will give the academy a steady base of players in every sport, so teams can compete up to national tournaments.</p></div>
+        <div><h3>Hosting and training grounds</h3><p>The sports centre will grow to host tournaments and give each sport its own training ground.</p></div>
+        <div><h3>Swimming and water safety</h3><p>We live in a region surrounded by lakes. Lessons will teach students to protect themselves in water and to help someone who is drowning.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hub">
+    <div class="wrap">
+      <p class="mono">Progress so far</p>
+      <h2>What is built and what is next</h2>
+      <p class="intro">The foundation has not waited for the full campus. Several parts are already working, and each has a clear next step.</p>
+      <ul class="ledger">
+        <li>
+          <h3>Primary school</h3>
+          <span class="chip ok">Running</span>
+          <p>Classes continue and the school is growing. We are in talks with World Vision about sponsorships so learners from less privileged homes can study beyond primary.</p>
+        </li>
+        <li>
+          <h3>Sports academy</h3>
+          <span class="chip ok">Running</span>
+          <p>Football for boys and netball for girls, with coaches who train both sides regularly. The under-12 and under-14 teams have won trophies at district, zonal and regional level and have played at national level. <a href="#sports">More below.</a></p>
+        </li>
+        <li>
+          <h3>Health facility</h3>
+          <span class="chip build">Building up</span>
+          <p>A doctor, a nurse and a midwife are on staff. The facility has beds with mattresses, testing kits and basic drugs, and an ultrasound scan is on the way. The next step is constructing the permanent HCIV building.</p>
+        </li>
+        <li>
+          <h3>Vocational school</h3>
+          <span class="chip build">Building up</span>
+          <p>Registered. We are deciding which workshop equipment to buy first.</p>
+        </li>
+        <li>
+          <h3>Alice Agro-farms</h3>
+          <span class="chip build">Building up</span>
+          <p>Cocoa, coffee, banana, horticulture, livestock, poultry and mechanised farming are under way, with veterinary and agriculture staff in place. It opens to students and farmers in 2027. <a href="#farm">More below.</a></p>
+        </li>
+        <li>
+          <h3>Alice Memorial College</h3>
+          <span class="chip plan">Planned</span>
+          <p>A foundation-aided secondary school for 1,000+ day and boarding students, S.1 to S.6, with subsidised places for Buikwe residents. Government will be involved where possible, and we are open to any partnership. Campus plans, crest and uniforms are designed. We expect to start by 2028.</p>
+        </li>
+        <li>
+          <h3>Electricity</h3>
+          <span class="chip plan">Planned</span>
+          <p>A 50 kVA transformer and an overhead line to the primary school are being planned. Government has indicated that grid power will reach the area in 2027.</p>
+        </li>
+        <li>
+          <h3>Community programs</h3>
+          <span class="chip plan">Planned</span>
+          <p>Programs for adults and older age groups, including talks with local councils about extending the sports academy beyond youth teams.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="programs">
+    <div class="wrap">
+      <p class="mono">Other programs</p>
+      <h2>Work already delivered</h2>
+      <p class="intro">Beyond the hub, the foundation has carried out other programs for the community. They include agricultural mechanisation, a dental health outreach, a priest's house and a community church. A medical outreach is now in progress.</p>
+      <div class="gallery">
+        <figure><img src="img/prog-tractor.jpg" width="900" height="675" alt="A green John Deere tractor with a worker seated at the wheel under the cab canopy." loading="lazy"><figcaption>Agricultural mechanisation.</figcaption></figure>
+        <figure><img src="img/prog-house.jpg" width="900" height="675" alt="A brick house with a red metal hip roof, open window and door frames, and a timber post at the front." loading="lazy"><figcaption>Priest's house.</figcaption></figure>
+        <figure><img src="img/prog-church.jpg" width="900" height="675" alt="A plastered church with a stepped gable, a cross, arched stained-glass windows and a red roof, on a grassy hilltop." loading="lazy"><figcaption>Community church.</figcaption></figure>
+        <figure class="wide"><img src="img/prog-dental.jpg" width="900" height="506" alt="Dental staff in aprons and masks treating patients in a large hall during a health outreach." loading="lazy"><figcaption>Dental health outreach.</figcaption></figure>
+        <figure class="wide"><img src="img/prog-building.jpg" width="900" height="506" alt="A brick building with timber roof trusses going up, surrounded by tall grass." loading="lazy"><figcaption>Building under construction, roof going on.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="farm">
+    <div class="wrap">
+      <p class="mono">Alice Agro-farms</p>
+      <h2>A working farm that teaches</h2>
+      <div class="farm">
+        <div>
+          <p>Alice Agro-farms shows students, neighbours and visitors what to grow, how to look after animals and when to plant. We have employed veterinary personnel and agriculturalists to run the farm and to test and master every practice first. Only then will we open the farm to the public, in 2027.</p>
+          <p>We have bought an irrigation pump and dug a deep water well. Learners and visitors will see good practice across every crop and animal we keep.</p>
+          <div class="place"><b>Location</b>Sangana, Muvo Parish, Ssi Sub-county, Buikwe District</div>
+        </div>
+      </div>
+
+      <h3 class="next-title">What we farm</h3>
+      <ul class="crops">
+        <li><span class="mono">Crop</span><strong>Cocoa</strong><p>A main crop on the farm.</p></li>
+        <li><span class="mono">Crop</span><strong>Coffee</strong><p>A main crop on the farm.</p></li>
+        <li><span class="mono">Crop</span><strong>Banana</strong><p>A staple food and income crop in Uganda.</p></li>
+        <li><span class="mono">Crop</span><strong>Horticulture</strong><p>Passion fruit, pineapple, green peppers, tomatoes and more.</p></li>
+        <li><span class="mono">Crop</span><strong>Vegetables</strong><p>Spinach, Chinese cabbage, sukuma wiki, cabbages and more.</p></li>
+        <li><span class="mono">Livestock</span><strong>Cattle, sheep and goats</strong><p>Reared with veterinary personnel on staff.</p></li>
+        <li><span class="mono">Livestock</span><strong>Poultry</strong><p>Run with advice from our veterinary and agriculture staff.</p></li>
+        <li><span class="mono">Machinery</span><strong>Mechanised agriculture</strong><p>Irrigation, spraying of plants and animals, and tilling land for planting.</p></li>
+      </ul>
+
+      <h3 class="next-title">On the farm</h3>
+      <p class="mono" style="margin:14px 0 0">Crops</p>
+      <div class="gallery">
+        <figure><img src="img/farm-coffee-cherries.jpg" width="900" height="675" alt="Branches of coffee with clusters of red, orange and green cherries." loading="lazy"><figcaption>Coffee cherries ripening.</figcaption></figure>
+        <figure><img src="img/farm-cocoa-pod.jpg" width="900" height="675" alt="A cocoa pod split open to show white, pulp-covered beans beside a yellow pod." loading="lazy"><figcaption>Cocoa pod opened to show the beans.</figcaption></figure>
+        <figure><img src="img/farm-banana-mature.jpg" width="900" height="675" alt="A tall banana plant with a large green bunch of bananas." loading="lazy"><figcaption>Banana with a bunch forming.</figcaption></figure>
+        <figure><img src="img/farm-coffee-slope.jpg" width="900" height="675" alt="Young coffee plants spaced out on a grassy red-soil hillside." loading="lazy"><figcaption>Young coffee on the slope.</figcaption></figure>
+        <figure><img src="img/farm-cocoa-bucket.jpg" width="900" height="675" alt="A white bucket full of yellow and orange harvested cocoa pods." loading="lazy"><figcaption>Harvested cocoa pods.</figcaption></figure>
+        <figure><img src="img/farm-banana-young.jpg" width="900" height="675" alt="Young banana plants growing in rows of freshly prepared red soil." loading="lazy"><figcaption>Young bananas in prepared soil.</figcaption></figure>
+        <figure><img src="img/farm-coffee-nursery.jpg" width="900" height="675" alt="Rows of coffee seedlings growing in black nursery bags." loading="lazy"><figcaption>Coffee seedlings in the nursery.</figcaption></figure>
+        <figure><img src="img/farm-passion.jpg" width="900" height="675" alt="A passion fruit seedling with glossy green leaves in red soil." loading="lazy"><figcaption>Passion fruit seedling.</figcaption></figure>
+        <figure><img src="img/farm-pineapple.jpg" width="900" height="675" alt="A pineapple with a pink and purple crown growing among long green leaves." loading="lazy"><figcaption>Pineapple.</figcaption></figure>
+        <figure class="wide"><img src="img/farm-cabbage.jpg" width="900" height="675" alt="Chinese cabbage plants growing in red soil." loading="lazy"><figcaption>Chinese cabbage.</figcaption></figure>
+        <figure class="wide"><img src="img/farm-pepper.jpg" width="900" height="675" alt="A green pepper hanging from a plant." loading="lazy"><figcaption>Green pepper.</figcaption></figure>
+      </div>
+      <p class="mono" style="margin:32px 0 0">Livestock and water</p>
+      <div class="gallery" style="margin-top:16px">
+        <figure><img src="img/farm-cow.jpg" width="900" height="675" alt="A black and white cow resting on grass." loading="lazy"><figcaption>A cow resting in the pasture.</figcaption></figure>
+        <figure><img src="img/farm-stalls.jpg" width="900" height="675" alt="Concrete stalls with wooden partitions inside an animal house." loading="lazy"><figcaption>Animal stalls.</figcaption></figure>
+        <figure><img src="img/farm-pen.jpg" width="900" height="675" alt="The sunlit floor of a wooden livestock pen." loading="lazy"><figcaption>Livestock pen.</figcaption></figure>
+        <figure><img src="img/farm-hay.jpg" width="900" height="675" alt="A large bundle of hay stored under a blue tarpaulin." loading="lazy"><figcaption>Hay stored for animal feed.</figcaption></figure>
+        <figure><img src="img/farm-shed.jpg" width="900" height="675" alt="A long wooden livestock shed with a roof, beside banana plants." loading="lazy"><figcaption>Livestock shed.</figcaption></figure>
+        <figure><img src="img/farm-well.jpg" width="900" height="675" alt="A hand-dug well with a wooden windlass and rope, surrounded by red soil and coffee plants." loading="lazy"><figcaption>The hand-dug well.</figcaption></figure>
+      </div>
+
+      <h3 class="next-title">Coming next</h3>
+      <div class="feat next">
+        <div><h3>Fish farming</h3><p>Fish ponds and tanks so trainees can learn fish rearing.</p></div>
+        <div><h3>Apiculture</h3><p>Beekeeping, run and taught on the farm.</p></div>
+        <div><h3>Forestry</h3><p>Tree planting to restore the vegetation cover the area has lost.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="help">
+    <div class="wrap">
+      <p class="mono">Partner with us</p>
+      <h2>Where support goes furthest</h2>
+      <p class="intro">We work with government, local councils and the kingdom, and we welcome partners who want to see their support turn into a classroom, a clinic bed or a harvest.</p>
+      <div class="help">
+        <div><h3>Sponsor a learner</h3><p>Help a child from a less privileged home continue past primary school.</p></div>
+        <div><h3>Stock the health facility</h3><p>Drugs, testing supplies, beds and the ultrasound scan, then the permanent building.</p></div>
+        <div><h3>Equip the vocational school</h3><p>Tools and workshop equipment so young people leave with a trade.</p></div>
+        <div><h3>Grow Alice Agro-farms</h3><p>Fish ponds, sprayers, tilling equipment and trainers for community farmers.</p></div>
+      </div>
+
+      <div class="contact" id="contact">
+        <h3>Talk to the foundation</h3>
+        <p>To visit the site, sponsor a learner or discuss a partnership, get in touch with the team in Buikwe District.</p>
+        <div class="reach">
+          <p class="mono">Phone</p>
+          <ul class="nums">
+            <li><a href="tel:+256746501572">0746 501 572</a><button type="button" class="copy" data-copy="0746501572" aria-label="Copy 0746 501 572">Copy</button></li>
+            <li><a href="tel:+256795368254">0795 368 254</a><button type="button" class="copy" data-copy="0795368254" aria-label="Copy 0795 368 254">Copy</button></li>
+            <li><a href="tel:+256752391093">0752 391 093</a><button type="button" class="copy" data-copy="0752391093" aria-label="Copy 0752 391 093">Copy</button></li>
+          </ul>
+          <p class="mono">Email</p>
+          <ul class="nums">
+            <li><a href="mailto:alicememorialfoundation256@gmail.com">alicememorialfoundation256@gmail.com</a><button type="button" class="copy" data-copy="alicememorialfoundation256@gmail.com" aria-label="Copy email address">Copy</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Alice Memorial Foundation</b></p>
+    <p class="mono">Ssi Sub-county · Buikwe District · Uganda</p>
+  </div>
+</footer>
+
+<div id="zoom" hidden role="dialog" aria-label="Master plan, full size">
+  <button type="button" id="close-zoom">Close</button>
+  <img src="img/campus-aerial.jpg" width="1536" height="560" alt="Full-size concept render of the Alice Memorial campus master plan">
+</div>
+
+<script>
+(function () {
+  var z = document.getElementById('zoom');
+  var openBtn = document.getElementById('open-zoom');
+  var closeBtn = document.getElementById('close-zoom');
+  function open() { z.hidden = false; closeBtn.focus(); }
+  function close() { z.hidden = true; openBtn.focus(); }
+  openBtn.addEventListener('click', open);
+  closeBtn.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !z.hidden) close(); });
+
+  document.querySelectorAll('.copy').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var li = b.closest('li'), link = li.querySelector('a');
+      function done() { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1800); }
+      function select() {
+        var r = document.createRange(); r.selectNodeContents(link);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        b.textContent = 'Selected';
+      }
+      try {
+        navigator.clipboard.writeText(b.getAttribute('data-copy')).then(done, select);
+      } catch (e) { select(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
