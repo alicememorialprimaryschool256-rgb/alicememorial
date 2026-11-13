@@ -1,81 +1,78 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="light"><meta name="theme-color" content="#1a3fa0"><link rel="icon" href="logo.png"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Alice Memorial Foundation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* Layout: black masthead carrying the AMF logo and headline, then the campus master plan image,
+/* Layout: white header with the AMF logo, blue masthead with the headline, then the campus master plan image,
    a status ledger of the hub's parts, the Agro-farms section, and ways to help. */
 :root {
-  --bg: #f4f6fa;        /* blue-tinted paper */
-  --surface: #e5eaf3;
-  --ink: #0e1a33;       /* navy-black */
-  --muted: #53607a;
-  --line: #ccd4e3;
-  --blue: #1c3f94;      /* AMF logo blue, main accent */
-  --on-blue: #f4f6fa;
-  --sun: #e2a912;       /* Ugandan flag yellow, tiny highlights */
-  --green: #2f6b4a;     /* cocoa */
+  color-scheme: light;
+  --bg: #f4f8ff;        /* soft white with a blue tint */
+  --surface: #e3edfc;
+  --ink: #0d1f4a;       /* deep navy for text */
+  --muted: #485a82;
+  --line: #cddcf3;
+  --blue: #1a3fa0;      /* AMF logo royal blue */
+  --navy: #0c2260;      /* deepest logo blue */
+  --sky: #3f8de6;       /* lighter blue from the logo flame and star */
+  --silver: #a9b3c2;    /* silver from the logo heart */
+  --on-blue: #ffffff;
+  --green: #2f6b4a;
   --coffee: #8a5a2b;
-  --hero-bg: #000;      /* matches the logo's own black ground */
-  --hero-fg: #f2f5fb;
-  --hero-muted: #aeb8cc;
-  --hero-accent: #6aa8ee;
+  --hero-grad: radial-gradient(900px 420px at 88% -10%, rgba(130,190,255,.50), transparent 62%), linear-gradient(135deg, #0c2260 0%, #1a3fa0 58%, #2a63c4 100%);
+  --hero-fg: #ffffff;
+  --hero-muted: #c3d8f7;
+  --hero-accent: #a9d2ff;
   --ok-bg: #d3e8d9; --ok-fg: #14472f;
   --build-bg: #f6e6b4; --build-fg: #5c4300;
-  --plan-bg: #dbe3f4; --plan-fg: #22377a;
+  --plan-bg: #d6e4fb; --plan-fg: #17327f;
   --font-display: "Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
   --font-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0a0f1c; --surface: #121a2e; --ink: #e7ecf7; --muted: #98a4bf; --line: #25304a;
-    --blue: #7aaaf2; --on-blue: #08122a; --sun: #f0bd2f; --green: #62b98a; --coffee: #c9955a;
-    --ok-bg: #1d3a2b; --ok-fg: #a7e0bf; --build-bg: #3d3210; --build-fg: #f0d78a; --plan-bg: #202a45; --plan-fg: #b8c8f0;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #0a0f1c; --surface: #121a2e; --ink: #e7ecf7; --muted: #98a4bf; --line: #25304a;
-  --blue: #7aaaf2; --on-blue: #08122a; --sun: #f0bd2f; --green: #62b98a; --coffee: #c9955a;
-  --ok-bg: #1d3a2b; --ok-fg: #a7e0bf; --build-bg: #3d3210; --build-fg: #f0d78a; --plan-bg: #202a45; --plan-fg: #b8c8f0;
-  color-scheme: dark;
-}
 * { box-sizing: border-box; }
 body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.6; }
 a { color: inherit; }
-:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
 .wrap { max-width: 1040px; margin-inline: auto; padding-inline: 20px; }
 .mono { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0; }
 h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.04; margin: 0; }
+h2, h3 { color: var(--navy); }
 
-/* masthead */
-.mast { background: var(--hero-bg); color: var(--hero-fg); }
-.mast .wrap { padding-block: 18px 64px; }
-.bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 28px; }
-.bar img { display: block; width: clamp(190px, 34vw, 280px); height: auto; margin-left: -14px; }
-nav { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 15px; font-weight: 500; }
-nav a { text-decoration: none; color: var(--hero-muted); padding-block: 4px; }
-nav a:hover { color: var(--hero-fg); text-decoration: underline; text-underline-offset: 4px; }
-.mast .mono { color: var(--hero-muted); margin-top: 28px; }
-.mast h1 { font-weight: 800; font-size: clamp(38px, 7.4vw, 80px); letter-spacing: -0.02em; margin-block: 16px 22px; max-width: 15ch; }
+/* header + masthead */
+.top { background: #fff; border-bottom: 3px solid var(--blue); }
+.top .wrap { padding-block: 6px; }
+.bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 28px; }
+.bar img { display: block; width: clamp(170px, 26vw, 220px); height: auto; margin-left: -8px; }
+nav { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 15px; font-weight: 600; }
+nav a { text-decoration: none; color: var(--blue); padding-block: 6px; }
+nav a:hover { color: var(--sky); text-decoration: underline; text-underline-offset: 4px; }
+.mast { background: var(--hero-grad); color: var(--hero-fg); position: relative; overflow: hidden; }
+.mast .wrap { position: relative; z-index: 1; padding-block: 52px 110px; }
+.mast .mono { color: var(--hero-muted); margin: 0; }
+.mast h1 { font-weight: 800; font-size: clamp(38px, 7.4vw, 80px); letter-spacing: -0.02em; margin-block: 16px 22px; max-width: 15ch; color: #fff; }
 .mast h1 em { font-style: normal; color: var(--hero-accent); }
 .lead { font-size: clamp(18px, 2.3vw, 21px); max-width: 54ch; margin: 0 0 28px; color: var(--hero-fg); }
+.wave { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 84px; display: block; }
+.wave .sheet { fill: var(--bg); }
+.wave .swoosh { fill: none; stroke: rgba(255,255,255,.55); stroke-width: 3; }
 .cta { display: flex; flex-wrap: wrap; gap: 12px; }
-.btn { display: inline-block; font-weight: 600; font-size: 16px; text-decoration: none; padding: 13px 22px; border-radius: 4px; background: var(--hero-accent); color: #04101f; border: 2px solid var(--hero-accent); }
-.btn.ghost { background: transparent; color: var(--hero-fg); border-color: #56627a; }
-.btn:hover { filter: brightness(1.1); }
+.btn { display: inline-block; font-weight: 700; font-size: 16px; text-decoration: none; padding: 13px 22px; border-radius: 4px; background: #fff; color: var(--navy); border: 2px solid #fff; }
+.btn.ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.7); }
+.btn:hover { filter: brightness(.94); }
+.btn.ghost:hover { background: rgba(255,255,255,.14); filter: none; }
 
 section { padding-block: 56px; border-top: 1px solid var(--line); }
 section:first-of-type { border-top: 0; }
+main > section:nth-of-type(even) { background: var(--surface); }
 h2 { font-weight: 700; font-size: clamp(30px, 5vw, 48px); letter-spacing: -0.015em; margin-block: 10px 18px; max-width: 18ch; }
 .intro { max-width: 60ch; color: var(--muted); margin: 0 0 32px; }
 
 /* master plan */
 .plan-btn { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; position: relative; border-radius: 6px; overflow: hidden; }
 .plan-btn img { display: block; width: 100%; height: auto; }
-.plan-btn span { position: absolute; right: 12px; bottom: 12px; background: #000c; color: #fff; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 8px 12px; border-radius: 3px; }
+.plan-btn span { position: absolute; right: 12px; bottom: 12px; background: rgba(12,34,96,.88); color: #fff; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 8px 12px; border-radius: 3px; }
 .inside { margin: 24px 0 0; }
 .inside img { display: block; width: 100%; height: auto; border-radius: 6px; }
 .caption { font-size: 14px; color: var(--muted); margin: 12px 0 0; max-width: 70ch; }
@@ -89,11 +86,11 @@ h2 { font-weight: 700; font-size: clamp(30px, 5vw, 48px); letter-spacing: -0.015
 /* college */
 .college { display: grid; gap: 28px 44px; grid-template-columns: minmax(0, 1fr); align-items: center; }
 @media (min-width: 760px) { .college { grid-template-columns: 300px minmax(0, 1fr); } }
-.crest { margin: 0; background: #000; border-radius: 6px; overflow: hidden; max-width: 340px; }
+.crest { margin: 0; background: var(--navy); border-radius: 8px; overflow: hidden; max-width: 340px; box-shadow: 0 0 0 3px var(--sky), 0 10px 30px rgba(12,34,96,.25); }
 .crest img { display: block; width: 100%; height: auto; }
 .college-text p { margin: 0 0 16px; max-width: 58ch; }
 .college-text .motto { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-.feat { display: grid; grid-template-columns: minmax(0, 1fr); margin-top: 36px; border-top: 2px solid var(--ink); }
+.feat { display: grid; grid-template-columns: minmax(0, 1fr); margin-top: 36px; border-top: 3px solid var(--blue); }
 @media (min-width: 760px) { .feat { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 36px; } }
 .feat div { padding-block: 20px; border-bottom: 1px solid var(--line); }
 .feat h3 { font-size: 21px; font-weight: 700; margin-bottom: 6px; }
@@ -106,8 +103,8 @@ h2 { font-weight: 700; font-size: clamp(30px, 5vw, 48px); letter-spacing: -0.015
 .sports-lead img { display: block; width: 100%; height: auto; border-radius: 6px; }
 .sports-text p { margin: 0; max-width: 62ch; }
 .ladder { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-.step { background: var(--surface); border-top: 4px solid var(--blue); padding: 14px 14px 16px; display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; }
-.step.top { border-top-color: var(--sun); }
+.step { background: #fff; border-top: 4px solid var(--blue); padding: 14px 14px 16px; display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; }
+.step.top { border-top-color: var(--sky); }
 .step b { font-family: var(--font-display); font-weight: 700; font-size: 20px; line-height: 1.15; }
 @media (min-width: 760px) {
   .ladder { grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: end; }
@@ -129,14 +126,14 @@ h2 { font-weight: 700; font-size: clamp(30px, 5vw, 48px); letter-spacing: -0.015
 .feat.next { margin-top: 14px; }
 
 /* crops */
-.crops { list-style: none; margin: 14px 0 0; padding: 0; border-top: 2px solid var(--ink); display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 40px; }
+.crops { list-style: none; margin: 14px 0 0; padding: 0; border-top: 3px solid var(--blue); display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 40px; }
 @media (min-width: 700px) { .crops { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .crops li { display: flex; flex-direction: column; gap: 2px; padding-block: 14px; border-bottom: 1px solid var(--line); }
 .crops strong { font-family: var(--font-display); font-weight: 700; font-size: 21px; line-height: 1.15; }
 .crops p { margin: 0; color: var(--muted); font-size: 16px; }
 
 /* ledger */
-.ledger { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
+.ledger { list-style: none; margin: 0; padding: 0; border-top: 3px solid var(--blue); }
 .ledger li { display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px 24px; padding-block: 18px; border-bottom: 1px solid var(--line); }
 @media (min-width: 760px) { .ledger li { grid-template-columns: 250px 130px minmax(0, 1fr); align-items: baseline; } }
 .ledger h3 { font-weight: 700; font-size: 21px; letter-spacing: -0.005em; }
@@ -149,39 +146,41 @@ h2 { font-weight: 700; font-size: clamp(30px, 5vw, 48px); letter-spacing: -0.015
 /* farm */
 .farm { display: grid; gap: 40px; grid-template-columns: minmax(0, 1fr); }
 .farm p { margin: 0 0 16px; max-width: 56ch; }
-.place { margin-top: 20px; padding: 14px 16px; background: var(--surface); border-left: 4px solid var(--sun); font-size: 15px; }
+.place { margin-top: 20px; padding: 14px 16px; background: var(--surface); border-left: 4px solid var(--sky); font-size: 15px; }
 .place b { font-family: var(--font-mono); font-weight: 500; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; display: block; color: var(--muted); margin-bottom: 2px; }
 
 /* help */
-.help { display: grid; grid-template-columns: minmax(0, 1fr); border-top: 2px solid var(--ink); }
+.help { display: grid; grid-template-columns: minmax(0, 1fr); border-top: 3px solid var(--blue); }
 @media (min-width: 700px) { .help { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; } }
 .help div { padding-block: 22px; border-bottom: 1px solid var(--line); }
 .help h3 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
 .help p { margin: 0; color: var(--muted); font-size: 16px; }
-.contact { background: var(--hero-bg); color: var(--hero-fg); padding: 36px 24px; border-radius: 6px; margin-top: 40px; border-bottom: 4px solid var(--hero-accent); }
-.contact h3 { font-size: clamp(26px, 4vw, 36px); margin-bottom: 10px; font-weight: 700; }
+.contact { background: var(--hero-grad); color: var(--hero-fg); padding: 36px 24px; border-radius: 8px; margin-top: 40px; border-bottom: 4px solid var(--sky); }
+.contact h3 { font-size: clamp(26px, 4vw, 36px); margin-bottom: 10px; font-weight: 700; color: #fff; }
 .contact p { margin: 0 0 6px; max-width: 54ch; }
 .contact .mono { color: var(--hero-muted); margin-top: 14px; }
 
 .reach { margin-top: 22px; display: grid; gap: 4px; }
 .reach .mono { margin-top: 12px; }
 .nums { list-style: none; margin: 0; padding: 0; }
-.nums li { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; padding-block: 7px; border-bottom: 1px solid #2a3348; }
+.nums li { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; padding-block: 7px; border-bottom: 1px solid rgba(255,255,255,.25); }
 .nums a { font-family: var(--font-display); font-weight: 600; font-size: clamp(19px, 3.6vw, 24px); text-decoration: none; min-width: 0; overflow-wrap: anywhere; }
 .nums a:hover { color: var(--hero-accent); }
-.copy { background: transparent; color: var(--hero-fg); border: 1px solid #56627a; border-radius: 3px; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 10px; cursor: pointer; }
+.nums.mail a { font-size: clamp(15px, 4.4vw, 22px); overflow-wrap: normal; word-break: normal; }
+.copy { background: transparent; color: var(--hero-fg); border: 1px solid rgba(255,255,255,.55); border-radius: 3px; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 10px; cursor: pointer; }
 .copy:hover { border-color: var(--hero-accent); }
-footer { border-top: 1px solid var(--line); }
+footer { background: var(--navy); color: #fff; border-top: 4px solid var(--sky); }
+footer .mono { color: var(--hero-muted); }
 footer .wrap { padding-block: 32px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
 footer p { margin: 0; }
 
 /* full-size plan viewer */
 #zoom { position: fixed; inset: 0; z-index: 50; background: #000e; overflow: auto; }
 #zoom img { display: block; width: 1536px; max-width: none; height: auto; margin: 64px auto 24px; }
-#zoom button { position: fixed; top: calc(12px + env(safe-area-inset-top, 0px)); right: 16px; background: var(--hero-accent); color: #04101f; border: 0; font-weight: 600; font-size: 15px; padding: 10px 16px; border-radius: 4px; cursor: pointer; }
+#zoom button { position: fixed; top: calc(12px + env(safe-area-inset-top, 0px)); right: 16px; background: #fff; color: var(--navy); border: 0; font-weight: 600; font-size: 15px; padding: 10px 16px; border-radius: 4px; cursor: pointer; }
 </style>
 
-<div class="mast" id="top">
+<header class="top" id="top">
   <div class="wrap">
     <div class="bar">
       <img src="logo.png" width="840" height="470" alt="Alice Memorial Foundation logo">
@@ -196,6 +195,11 @@ footer p { margin: 0; }
         <a href="#contact">Contact</a>
       </nav>
     </div>
+  </div>
+</header>
+
+<div class="mast">
+  <div class="wrap">
     <p class="mono">Ssi Sub-county · Buikwe District · Uganda · 2026–2030</p>
     <h1>Learning, health and farming, <em>in one place.</em></h1>
     <p class="lead">Alice Memorial Foundation is building an education and skills campus in Buikwe District, with a secondary school, a vocational institute, a health centre, a teaching farm and a sports academy beside the primary school that is already running.</p>
@@ -204,6 +208,10 @@ footer p { margin: 0; }
       <a class="btn ghost" href="#help">Partner with us</a>
     </div>
   </div>
+  <svg class="wave" viewBox="0 0 1440 84" preserveAspectRatio="none" aria-hidden="true">
+    <path class="swoosh" d="M0,46 C260,92 520,6 800,34 C1060,60 1250,74 1440,24"/>
+    <path class="sheet" d="M0,58 C260,100 520,18 800,46 C1060,72 1250,84 1440,40 L1440,84 L0,84 Z"/>
+  </svg>
 </div>
 
 <main>
@@ -456,8 +464,8 @@ footer p { margin: 0; }
             <li><a href="tel:+256752391093">0752 391 093</a><button type="button" class="copy" data-copy="0752391093" aria-label="Copy 0752 391 093">Copy</button></li>
           </ul>
           <p class="mono">Email</p>
-          <ul class="nums">
-            <li><a href="mailto:alicememorialfoundation256@gmail.com">alicememorialfoundation256@gmail.com</a><button type="button" class="copy" data-copy="alicememorialfoundation256@gmail.com" aria-label="Copy email address">Copy</button></li>
+          <ul class="nums mail">
+            <li><a href="mailto:foundationalicememorial@gmail.com">foundationalicememorial@gmail.com</a><button type="button" class="copy" data-copy="foundationalicememorial@gmail.com" aria-label="Copy email address">Copy</button></li>
           </ul>
         </div>
       </div>
